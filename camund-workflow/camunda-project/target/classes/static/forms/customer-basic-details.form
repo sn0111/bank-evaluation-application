@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "id": "Field_04s1qyn",
+      "key": "name",
+      "description": "Please enter the customer name",
+      "validate": {
+        "required": true,
+        "minLength": 4,
+        "maxLength": 30
+      }
+    },
+    {
+      "label": "Address Line1",
+      "type": "textfield",
+      "id": "Field_13kn2gt",
+      "key": "address",
+      "description": "Address",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "value": "in",
+          "label": "India"
+        },
+        {
+          "label": "Singapore",
+          "value": "sg"
+        }
+      ],
+      "label": "Country",
+      "type": "select",
+      "id": "Field_10f72nr",
+      "key": "country",
+      "description": "country",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "customer-basic-details"
+}

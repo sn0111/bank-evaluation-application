@@ -1,0 +1,33 @@
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:/forms/customer-engagment-form.html
+-->
+
+<form name="approval-request-form" class="form-horizontal" role="form">
+ 
+   <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="projectmanager" placeholder="Napier Project Manager">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <label for="engageProject">Engaged Project</label>
+	  <select name="engageProject" class="form-control form-control-solid form-control-lg">
+		<option value="" selected="selected" ng-reflect-value=""> Select Option</option>
+		<option value="service"> Service </option>
+		<option value="product"> Product </option>
+	  </select>
+    </div>
+    <div class="col">
+	 <label for="enaggedType">Engagement Type</label>
+       <select name="enaggedType" class="form-control form-control-solid form-control-lg">
+		<option value="" selected="selected" ng-reflect-value=""> Select Option</option>
+		<option value="new"> New </option>
+		<option value="migration"> Migration </option>
+	  </select>
+    </div>
+  </div>
+</form>

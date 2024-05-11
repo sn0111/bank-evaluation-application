@@ -1,0 +1,247 @@
+<head>
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:8081;">
+</head>
+<form id="addLicenseForm" name="addLicenseForm" class="form form--fit">
+	<div class="modal-body">
+		<h3 class="pl-2">Initiator's Details</h3>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label>Initiator Name</label>
+				<input type="text" class="form-control" cam-variable-name="initiatorName" cam-variable-type="String">
+			</div>
+			<div class="form-group col-md-4">
+				<label>Initiator Business Unit</label>
+				<input type="text" class="form-control" cam-variable-name="initiatorBusinessUnit" cam-variable-type="String">
+			</div>
+			<div class="form-group col-md-4">
+				<label>Initiator contact number</label>
+				<input type="text" class="form-control" placeholder="Enter contact number" cam-variable-name="initiatorContactNumber" cam-variable-type="String">
+			</div>
+		</div>
+		<div>
+			<h3 class="pl-2 pt-2">Facility Details</h3>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label>Type of facility</label>
+					<select class="form-control" name="facilityType" cam-variable-name="facilityType" cam-variable-type="String">
+						<option value="">Select a type</option>
+						<option value="Revolving">Revolving</option>
+						<option value="NonRevolving">Non-revolving</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label>Category</label>
+					<select class="form-control" name="category" cam-variable-name="category" cam-variable-type="String">
+						<option value="">Select a type</option>
+						<option value="Apartment">25000 - Apartment</option>
+						<option value="Housing">25010 – PBWM Housing</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label>Purpose</label>
+					<select class="form-control" name="valuationType" cam-variable-name="valuationType" cam-variable-type="String">
+						<option value="">Select a type</option>
+						<option value="Reparation">1 – Reparation</option>
+						<option value="Inheritance">2 - Inheritance</option>
+						<option value="Construction">3 - Construction</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label>Term</label>
+					<input type="text" class="form-control" cam-variable-name="term" cam-variable-type="Integer">
+				</div>
+				<div class="form-group col-md-4">
+					<div class="form-group col-md-4">
+						<label>CCY</label>
+						<select class="form-control" name="currency" id="mySelect" cam-variable-name="currencyUuid" cam-variable-type="String">
+<!--							<option value="">Select a type</option>-->
+<!--							<option value="Revolving">Revolving</option>-->
+<!--							<option value="Non-revolving">Non-revolving</option>-->
+						</select>
+					</div>
+					<div class="form-group col-md-8">
+						<label>Amount</label>
+						<input type="text" class="form-control" cam-variable-name="amount" cam-variable-type="String">
+					</div>
+
+				</div>
+				<div class="form-group col-md-4">
+					<input type="checkbox" class="form-control" cam-variable-name="housingLoan" cam-variable-type="Boolean">
+					<label>Housing Loan</label>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-body">
+				<h3 class="pl-2 pt-2">Property Valuation</h3>
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label>Type of Valuation</label>
+						<select class="form-control" name="evaluationType" cam-variable-name="evaluationType" cam-variable-type="String">
+							<option value="">Select a type</option>
+							<option value="New">New</option>
+							<option value="Existing">Existing</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Fos Ref No</label>
+						<input type="text" class="form-control" cam-variable-name="fosRefNumber" cam-variable-type="String">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 class="pl-2 pt-2">Borrower's Details</h3>
+			<h3 class="pl-2 pt-2">Main Borrower</h3>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>Customer Number</label>
+							<input type="text" class="form-control" cam-variable-name="customerNumber" cam-variable-type="String">
+						</div>
+						<div class="form-group col-md-6">
+							<label>Customer Name</label>
+							<input type="text" class="form-control" cam-variable-name="customerName" cam-variable-type="String">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>Contact No</label>
+							<input type="text" class="form-control" cam-variable-name="contactNumber" cam-variable-type="String">
+						</div>
+						<div class="form-group col-md-6">
+							<label>Email</label>
+							<input type="email" class="form-control" cam-variable-name="email" cam-variable-type="String">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="form-group">
+							<label>Address</label>
+							<textarea class="form-control" cam-variable-name="address" cam-variable-type="String"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3 class="pl-2 pt-2">Joint Borrower -#1</h3>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>Customer Number</label>
+							<input type="text" class="form-control" cam-variable-name="customerNumber1" cam-variable-type="String">
+						</div>
+						<div class="form-group col-md-6">
+							<label>Customer Name</label>
+							<input type="text" class="form-control" cam-variable-name="customerName1" cam-variable-type="String">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>Contact No</label>
+							<input type="text" class="form-control" cam-variable-name="contactNumber1" cam-variable-type="String">
+						</div>
+						<div class="form-group col-md-6">
+							<label>Email</label>
+							<input type="email" class="form-control" cam-variable-name="email1" cam-variable-type="String">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="form-group">
+							<label>Address</label>
+							<textarea class="form-control" cam-variable-name="address1" cam-variable-type="String"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="row pl-2">
+				<div class="form-group">
+					<label>Comments</label>
+					<textarea type="text" class="form-control" cam-variable-name="description" cam-variable-type="String"></textarea>
+				</div>
+			</div>
+			<h3 class="pl-2 pt-2">Previous comments</h3>
+			<table class="table" id="myTable">
+				<thead>
+				<tr>
+					<th scope="col">Date</th>
+					<th scope="col">User</th>
+					<th scope="col">Comments</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>First comment</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Second comment</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Larry</td>
+					<td>Third comment</td>
+				</tr>
+				</tbody>
+			</table>
+			<script>
+				// Sample data for table
+                var tableData = [
+                    { col1: 'Data 1', col2: 'Data 2', col3: 'Data 3' },
+                    { col1: 'Data 4', col2: 'Data 5', col3: 'Data 6' },
+                    { col1: 'Data 7', col2: 'Data 8', col3: 'Data 9' }
+                ];
+
+                // Reference to the table body
+                var tableBody = document.getElementById('myTable');
+
+                // Loop through the table data and create table rows
+                for (var i = 0; i < tableData.length; i++) {
+                    var row = tableBody.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+
+                    // Fill cells with data
+                    cell1.innerHTML = tableData[i].col1;
+                    cell2.innerHTML = tableData[i].col2;
+                    cell3.innerHTML = tableData[i].col3;
+                }
+
+                // Sample data for select options
+                var selectData = [
+                    { currencyUuid: "1f52607f-28b6-4c0b-b991-c5dd3ae83ab0", currencyName: "MUR" },
+                    { currencyUuid: "9efe74eb-69e0-4e00-8ddf-9e106c782a94", currencyName: "EUR" },
+                    { currencyUuid: "903cf57b-7829-464f-a321-291c25c80c10", currencyName: "USD" },
+                    { currencyUuid: "79bd0d0c-abbf-4ed3-8e3b-eab6e0eaccfc", currencyName: "GBP" },
+                    { currencyUuid: "af5a5246-9476-41e1-b626-4051c611ba85", currencyName: "ZAR" }
+                ];
+
+                // Reference to the select element
+                var selectElement = document.getElementById('mySelect');
+
+                // Loop through the select data and create options
+                for (var i = 0; i < selectData.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = selectData[i].currencyName;
+                    option.value = selectData[i].currencyUuid;
+                    selectElement.add(option);
+                }
+
+
+			</script>
+		</div>
+	</div>
+</form>
+

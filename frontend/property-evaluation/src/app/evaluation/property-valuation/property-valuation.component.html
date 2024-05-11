@@ -1,0 +1,19 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <h3 class="second-heading">Property Valuation</h3>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Type of Valuation</label>
+                <select class="form-control" name="evaluationType" value="{{evaluationType}}" (input)="setEvaluationType($event)">
+                    <option value="">Select</option>
+                    <option value="New">New</option>
+                    <option value="Existing">Existing</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Fos Ref No</label>
+                <input type="text" class="form-control" disabled value="{{fosRefNumber}}" (input)="setFosRefNumber($event)">
+            </div>
+        </div>
+    </div>
+</div>

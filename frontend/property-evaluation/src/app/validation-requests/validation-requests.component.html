@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container mb-3 mt-2 div-bg">
+    <div class="p-3">
+        <h3 class="main-heading">PVS Validation Requests</h3>
+        <div style="height: 600px;overflow-y: scroll;">
+            <table class="table gfg" id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Reference</th>
+                        <th scope="col">Received on</th>
+                        <th scope="col">Borrower's name</th>
+                        <th scope="col">FOS Ref</th>
+                        <th scope="col">Created on</th>
+                        <th scope="col">Modified on</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests">
+                        <td scope="row">{{request.reference}}</td>
+                        <td>{{dateFormat(request.createdDate)}}</td>
+                        <td>{{request.initiatorName}}</td>
+                        <td>{{request.fosRefNumber}}</td>
+                        <td>{{dateFormat(request.createdDate)}}</td>
+                        <td>{{dateFormat(request.updatedDate)}}</td>
+                        <td >
+                            <button class="btn btn-secondary">Claim</button>
+                            <span style="padding-left: 10px;font-size: x-large;"><i class="bi bi-eye"></i></span> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

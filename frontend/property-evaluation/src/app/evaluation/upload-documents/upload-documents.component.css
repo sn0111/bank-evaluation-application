@@ -1,0 +1,48 @@
+.main-heading{
+    font-size: 20px;
+  }
+  .second-heading{
+    font-size: 18px;
+  }
+
+.drag-area{
+  border: 2px dashed black;
+  height: 240px;
+  width: 350px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding: 10px; */
+}
+
+.drag-area.active{
+  border: 2px solid black;
+}
+
+.drag-area .icon{
+  font-size: 50px;
+  color: black;
+}
+
+.drag-area header{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.drag-area span{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.drag-area button{
+  padding: 3px 16px;
+  color: white;
+  background-color: black;
+}
+
+.drag-area .text{
+  font-size: 13px;
+  font-weight: 400;
+}

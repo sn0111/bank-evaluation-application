@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="login">
+    <div class='container-fluid home'>
+        <div class='row'>
+          <div class='col-sm-6'>
+            <div class='header'>
+              Bank Property Evaluation 
+            </div>
+            <div class='header-desc pt-4'>
+              Web Application
+            </div>
+          </div>
+          <div class='col-sm-6'>
+            <div class='right'>
+              <div class='right-header'>Login to property evaluation application</div>
+              <form class='pt-3'>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" placeholder="Enter email" (input)="setUserEmail($event)"/>
+                </div>
+                <div class="form-group pt-2">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" (input)="setPassword($event)"
+                  />
+                </div>
+                <div class='pt-2'><button type="submit" class="btn btn-primary" (click)="login($event)">Submit</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

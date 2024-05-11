@@ -1,0 +1,56 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <h3 class="second-heading">Facility Details</h3>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Type of facility</label>
+                <select class="form-control" name="facilityType" (input)="setFacilityType($event)" [(ngModel)]="facilityType">
+                    <option value="">Select</option>
+                    <option value="Revolving">Revolving</option>
+                    <option value="NonRevolving">Non-revolving</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Category</label>
+                <select class="form-control" name="category" (input)="setCategory($event)" [(ngModel)]="category">
+                    <option value="">Select</option>
+                    <option value="Apartment">25000 - Apartment</option>
+                    <option value="Housing">25010 – PBWM Housing</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Purpose</label>
+                <select class="form-control" name="valuationType" (input)="setPurpose($event)" [(ngModel)]="valuationType">
+                    <option value="">Select</option>
+                    <option value="Reparation">1 – Reparation</option>
+                    <option value="Inheritance">2 - Inheritance</option>
+                    <option value="Construction">3 - Construction</option>
+                </select>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="form-group col-md-4">
+                <label>Term</label>
+                <input type="text" class="form-control" (input)="setTerm($event)" [(ngModel)]="term">
+            </div>
+            <div class="form-group col-md-4">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label>CCY</label>
+                        <select class="form-control" name="currency" id="mySelect" (input)="setCurrency($event)" [(ngModel)]="currencyUuid">
+                                <option *ngFor="let currency of currencies" value="{{currency.currencyUuid}}">{{currency.currencyName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label>Amount</label>
+                        <input type="text" class="form-control" (input)="setAmmount($event)" [(ngModel)]="amount">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4 pt-4">
+                <input type="checkbox" class="" (input)="setHosingLoan($event)" [(ngModel)]="housingLoan">
+                <label>&nbsp;Housing Loan</label>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="pt-2 pb-2">
+    <h3 class="second-heading">{{borrowersUuid}}</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Customer Number</label>
+                    <div class="form-group has-search">
+                        <i class="bi bi-search form-control-feedback"></i>
+                        <input type="text" [attr.list]="borrowersUuid" placeholder="Search" class="form-control" value="{{customerNumber}}" (input)="setCustomerNumber($event)">
+                      </div>
+                    <datalist id="{{borrowersUuid}}">
+                        <option *ngFor="let customer of customers" value="{{customer.customerNumber}}">{{customer.customerNumber}} - {{customer.shortName}}</option>
+                    </datalist>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Customer Name</label>
+                    <input type="text" class="form-control" value="{{customerName}}" (input)="setCustomerName($event)">
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="form-group col-md-6">
+                    <label>Contact No</label>
+                    <input type="text" class="form-control" value="{{contactNumber}}" (input)="setContactNo($event)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Email</label>
+                    <input type="email" class="form-control" value="{{email}}" (input)="setEmail($event)">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" value="{{address}}" (input)="setAddress($event)"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="borrowersUuid !== 'Main Borrower'" class="col-md-2 pt-4">
+                    <i class="bi bi-trash" style="color: red;width: 13px;font-size: larger;" (click)="deleteJointBorrower()"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

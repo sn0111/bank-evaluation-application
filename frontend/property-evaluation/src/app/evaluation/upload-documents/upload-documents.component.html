@@ -1,0 +1,62 @@
+<app-loader [showLoader]="isLoading"></app-loader>
+<app-alert *ngIf="showAlert" [message]="message" [type]="type" (alert)="showAlert=false"></app-alert>
+<div class="card mt-3">
+    <div class="card-body">
+        <h3 class="second-heading">Upload Section</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group col-md-8">
+                    <label>Document Type</label>
+                    <select class="form-control" name="documentUuid" [(ngModel)]="documentUuid">
+                        <option value="">Select</option>
+                        <option *ngFor="let type of documentTypes" value="{{type.documentUuid}}">{{type.documentName}}</option>
+                    </select>
+                </div>  
+                <div class="drag-area mt-3" id="dropArea" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+                    <div class="icon"><i class="bi bi-cloud"></i></div>
+                    <header>Drag & Drop File To Upload</header>
+                    <span>OR</span>
+                    <button (click)="openFileInput()">Browse File</button>
+                    <input type="file" #fileInput style="display:none;" (change)="onFileSelected($event)">
+                    <span class="text pt-2">Maximum size: 5MB</span>
+                    <span class="text">Allowed format: XLSX, PDF</span>
+                </div>
+                <!-- <div class="dropzone" fileDragDrop (filesChangeEmiter)="onFileChange($event)">
+                    <div class="text-wrapper">
+                        <div class="centered">
+                            <input type="file" name="file" id="file" (change)="onFileChange($event.target.files)" multiple>
+                            <label for="file"><span class="textLink">Select your file</span> or Drop it here!</label>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-8">
+                <label>Uploaded Documents</label>
+                <table class="table" id="myTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Doc Type</th>
+                        <th scope="col">Filename</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Uploaded by</th>
+                        <th scope="col">Uploaded on</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let file of files">
+                            <th scope="row">{{file.documentType.documentName}}</th>
+                            <td>{{file.name}}</td>
+                            <td>{{file.size}}</td>
+                            <td>{{file.createdBy}}</td>
+                            <td >
+                                <span style="padding-right: 4px;">{{dateFormat(file.createdDate)}} </span>
+                                <a style="padding-right: 4px;cursor: pointer;color: black;" href="{{file.url}}"><i class="bi bi-download"></i></a>
+                                <span style="padding-left: 4px;color: red;cursor: pointer;"><i class="bi bi-trash" (click)="deleteDocument(file.documentsUuid)"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

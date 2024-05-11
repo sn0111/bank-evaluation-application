@@ -1,0 +1,39 @@
+{
+  "components": [
+    {
+      "label": "Useremail",
+      "type": "textfield",
+      "id": "Field_04s1qyn",
+      "key": "userEmail",
+      "description": "Please enter your email",
+      "validate": {
+        "required": true,
+        "minLength": 4,
+        "maxLength": 30
+      },
+      "layout": {
+        "row": "Row_0ykvsop"
+      }
+    },
+    {
+      "label": "Password",
+      "type": "textfield",
+      "id": "Field_13kn2gt",
+      "key": "password",
+      "description": "Please enter your password",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_0cfncga"
+      }
+    }
+  ],
+  "schemaVersion": 16,
+  "type": "default",
+  "id": "customer-basic-details",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.22.0"
+  }
+}

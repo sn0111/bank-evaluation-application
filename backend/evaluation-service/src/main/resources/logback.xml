@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="EVALUATION_LOG" value="logs/evaluation-service.log"/>
+
+    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${EVALUATION_LOG}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/config-manager-service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each archived file, size max 5MB -->
+            <maxFileSize>5MB</maxFileSize>
+            <!-- total size of all archive files, if total size > 20GB,it will delete old archived file -->
+            <totalSizeCap>20GB</totalSizeCap>
+            <!-- 60 days to keep -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [traceId: %X{traceId:-}, spanId: %X{spanId:-}] [%thread] %-5level %class{36}.%M %L
+                - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.napier" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE-ROLLING"/>
+    </logger>
+
+    <logger name="com.napier" level="TRACE" additivity="false">
+        <appender-ref ref="FILE-ROLLING"/>
+    </logger>
+
+    <root level="WARN">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <appender name="SystemErr"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+</configuration>

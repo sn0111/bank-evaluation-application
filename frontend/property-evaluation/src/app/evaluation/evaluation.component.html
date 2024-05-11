@@ -1,0 +1,40 @@
+<app-loader [showLoader]="isLoading"></app-loader>
+<app-alert *ngIf="showAlert" [message]="message" [type]="type" (alert)="showAlert=false"></app-alert>
+<div style="position: relative;margin-bottom: 80px;">
+    <app-header></app-header>
+    <div class="container mb-3 mt-2 div-bg">
+        <h3 class="main-heading">New Property Evaluation</h3>
+        <app-initiator-details  #initComponent (initiatorContactNumber)="setInitiatorContactNumber($any($event))"></app-initiator-details>
+            
+        <app-facility-details #facilityComponent (facility)="facilityDetails($any($event))"></app-facility-details>
+        
+        <app-property-valuation #valuationComponent  (valuation)="setValuation($any($event))"></app-property-valuation>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h3 class="main-heading">Borrower's Details</h3>
+                <!-- <h3 class="second-heading">Main Borrower</h3> -->
+                <app-borrower #main (borrower)="addBorrower($any($event))" [borrowersUuid]="'Main Borrower'"></app-borrower>
+                <!-- <h3 class="pt-4 second-heading">Joint Borrower -#1</h3> -->
+                <div class="joint-borrower">
+                    <app-borrower #{{i}} (deleteBorrower)="deleteBorrower($any($event))" *ngFor="let joint of jointBorrowerCount; let i = index" (borrower)="addBorrower($any($event))" [index]="i" [borrowersUuid]="'Joint Borrower '+(i+1)"></app-borrower>
+                </div>
+                <button class="btn btn-secondary mt-3" (click)="addJointBorrower()">Add Joint Borrower</button>
+            </div>
+        </div>
+        
+        <app-comments #commentComponent (comment)="setDescription($any($event))"></app-comments>
+
+        <app-upload-documents (document)="setDocuments($any($event))"></app-upload-documents>
+    </div>
+</div>
+<footer class="fixed-bottom bg-light">
+    <div class="container">
+        <div class="text-center p-2">
+            <div>
+                <button class="btn btn-success m-2" (click)="create()">Create Property Evaluation</button>
+                <button class="btn btn-secondary" (click)="clear()">Remove Values</button>
+            </div>
+        </div>
+    </div>
+</footer>

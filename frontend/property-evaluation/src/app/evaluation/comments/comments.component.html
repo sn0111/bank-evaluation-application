@@ -1,0 +1,30 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <div class="row pl-2">
+            <div class="form-group">
+                <h3 class="second-heading">Comments</h3>
+                <textarea type="text" class="form-control" value="{{description}}" (input)="onDescriptionChange($event)"></textarea>
+            </div>
+        </div>
+        <!-- <button class="btn btn-success" (click)="addComment()">Click</button> -->
+        <h3 class="second-heading pt-2">Previous comments</h3>
+        <div style="height: 200px;overflow-y: scroll;">
+            <table class="table" id="myTable"  >
+                <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let comment of comments">
+                    <td class="col-2">{{dateFormat(comment.createdDate)}}</td>
+                    <td class="col-2">{{comment.createdBy}}</td>
+                    <td class="col-8">{{ comment.description}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
