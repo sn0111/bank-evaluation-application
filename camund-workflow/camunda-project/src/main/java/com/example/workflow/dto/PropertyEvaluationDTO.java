@@ -34,5 +34,5 @@ public class PropertyEvaluationDTO {
     @Valid
     private List<CommentsDTO> comments;
 //    @Valid
-//    private List<DocumentsDTO> documents;
+    private List<DocumentsDTO> documents;
 }

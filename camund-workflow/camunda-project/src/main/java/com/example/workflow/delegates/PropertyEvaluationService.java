@@ -52,7 +52,7 @@ public class PropertyEvaluationService implements JavaDelegate {
         dto.setInitiatorName((String) variables.get("initiatorName"));
         dto.setInitiatorBusinessUnit((String) variables.get("initiatorBusinessUnit"));
         dto.setInitiatorContactNumber((String) variables.get("initiatorContactNumber"));
-
+        dto.setDocuments(List.of());
         delegateExecution.setVariable("dto",dto);
 
 

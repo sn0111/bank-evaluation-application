@@ -1,9 +1,9 @@
 spring.datasource.url: jdbc:h2:file:./camunda-h2-database
 
+camunda.bpm.client:
+  base-url: http://localhost:8080/engine-rest
+
 camunda.bpm.admin-user:
   id: admin
   password: admin
 
-camunda.bpm:
-  process-engine-name: default
-  generic-properties.scripting.enabled: true
